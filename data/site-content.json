@@ -1,1 +1,445 @@
-
+{
+  "siteMeta": {
+    "title": "Media Buyer Portfolio",
+    "description": "Portfolio website for a Media Buyer / Digital Marketer specializing in profitable scale systems and high-LTV customer acquisition.",
+    "keywords": "Media Buyer, Digital Marketer, Ad Campaign Optimization, ROAS, CPA, KPI Dashboard",
+    "author": "Media Buyer Portfolio",
+    "copyright": "Media Buyer Portfolio. All rights reserved.",
+    "contactEmail": "hello@example.com",
+    "socialLinks": {
+      "youtube": "https://youtube.com/@example",
+      "linkedin": "https://linkedin.com/in/example",
+      "github": "https://github.com/example",
+      "facebook": "https://facebook.com/example"
+    }
+  },
+  "whatsappButton": {
+    "enabled": false,
+    "phoneNumber": "",
+    "position": "bottom-right",
+    "size": "medium",
+    "themeColor": "#25D366",
+    "pulse": true,
+    "pulseColor": "#25D366",
+    "pulseSpeed": 1.8,
+    "zIndex": 9999,
+    "visibleOnMobile": true,
+    "visibleOnDesktop": true,
+    "openBehavior": "wa-link",
+    "prefilledMessage": "Hi! I'm interested in your services."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "enabled": true,
+      "order": 0,
+      "title": "Hero Section",
+      "data": {
+        "badge": "Media Buyer & Digital Marketer",
+        "headline": "Scalable Profit Engineering",
+        "headlineAccent": "— where data meets buyer psychology.",
+        "subtitle": "I've managed <strong>$8,000,000+</strong> in ad budgets to move e-commerce stores from stagnation to profitable scale. We don't buy clicks — we build systems that attract high-LTV customers.",
+        "ctaPrimary": {
+          "text": "View Projects",
+          "url": "#projects",
+          "icon": "arrow-right"
+        },
+        "ctaSecondary": {
+          "text": "Request Free Audit",
+          "url": "#dashboard",
+          "icon": "document"
+        },
+        "stats": [
+          { "value": "$8M+", "label": "Ad Spend Managed" },
+          { "value": "3.2x", "label": "Avg. ROAS" },
+          { "value": "150+", "label": "Campaigns Optimized" }
+        ]
+      }
+    },
+    {
+      "id": "dashboard",
+      "enabled": true,
+      "order": 1,
+      "title": "Live KPI Dashboard",
+      "data": {
+        "title": "Live KPI Dashboard",
+        "subtitle": "Upload your campaign CSV to run an instant health check",
+        "privacyNotice": "Data is processed locally in your browser and not uploaded. Your campaign data never leaves your device."
+      }
+    },
+    {
+      "id": "about",
+      "enabled": true,
+      "order": 2,
+      "title": "About Me",
+      "data": {
+        "sectionLabel": "About Me",
+        "title": "Turning Ad Spend Into Sustainable Growth",
+        "content": [
+          "With over 8 years of experience in digital marketing and media buying, I've developed a systematic approach to campaign optimization that prioritizes sustainable growth over short-term gains. My methodology combines rigorous data analysis with deep understanding of consumer psychology and platform algorithms.",
+          "I specialize in helping e-commerce brands scale profitably, having managed over $8 million in ad spend across Meta, Google, TikTok, and emerging platforms. My clients typically see a 40-60% improvement in ROAS within the first 90 days of working together.",
+          "Beyond campaign management, I'm passionate about building systems and tools that democratize access to professional-grade marketing analytics. This portfolio showcases both my client work and the custom tools I've developed to make data-driven marketing more accessible."
+        ],
+        "highlights": [
+          { "icon": "🎯", "text": "Meta Business Partner Certified" },
+          { "icon": "📊", "text": "Google Ads Certified" },
+          { "icon": "🏆", "text": "150+ Successful Campaigns" }
+        ]
+      }
+    },
+    {
+      "id": "skills",
+      "enabled": true,
+      "order": 3,
+      "title": "Skills & Capabilities",
+      "data": {
+        "sectionLabel": "Expertise",
+        "subtitle": "A comprehensive toolkit built through years of hands-on campaign management",
+        "skills": [
+          {
+            "title": "Media Buying",
+            "description": "Strategic campaign planning, audience targeting, bid optimization, and budget allocation across all major platforms.",
+            "icon": "grid",
+            "tags": ["Meta Ads", "Google Ads", "TikTok Ads", "LinkedIn Ads"]
+          },
+          {
+            "title": "Analytics & Reporting",
+            "description": "Deep-dive analysis of campaign performance, attribution modeling, and actionable insights generation.",
+            "icon": "chart",
+            "tags": ["GA4", "Looker Studio", "Triple Whale", "Northbeam"]
+          },
+          {
+            "title": "Conversion Optimization",
+            "description": "Landing page optimization, A/B testing frameworks, funnel analysis, and conversion rate improvement.",
+            "icon": "compass",
+            "tags": ["A/B Testing", "CRO", "Heatmaps", "User Research"]
+          },
+          {
+            "title": "Technical Setup",
+            "description": "Pixel implementation, server-side tracking, data layer configuration, and technical troubleshooting.",
+            "icon": "code",
+            "tags": ["Meta CAPI", "GTM", "Server Tracking", "Shopify"]
+          },
+          {
+            "title": "Creative Strategy",
+            "description": "Creative testing frameworks, ad copy optimization, visual storytelling, and creative performance analysis.",
+            "icon": "box",
+            "tags": ["Creative Testing", "Ad Copy", "UGC", "Video Ads"]
+          },
+          {
+            "title": "Audience Development",
+            "description": "Lookalike modeling, audience segmentation, retargeting strategies, and customer journey mapping.",
+            "icon": "users",
+            "tags": ["Lookalikes", "Retargeting", "Segments", "LTV Analysis"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "projects",
+      "enabled": true,
+      "order": 4,
+      "title": "Featured Projects",
+      "data": {
+        "sectionLabel": "Portfolio",
+        "subtitle": "Real results from real campaigns — each case study showcases systematic approaches to scaling"
+      },
+      "blocks": [
+        {
+          "id": "proj-001",
+          "title": "Fashion Brand Scale: 0 to $500K/month",
+          "category": "E-commerce • Fashion",
+          "description": "Scaled a sustainable fashion brand from $50K to $500K monthly revenue in 8 months while maintaining 4.2x ROAS.",
+          "metrics": [
+            { "value": "4.2x", "label": "ROAS" },
+            { "value": "-42%", "label": "CPA" },
+            { "value": "10x", "label": "Revenue" }
+          ],
+          "caseStudy": {
+            "client": "Sustainable Fashion Brand",
+            "period": "8 months",
+            "overview": "This project involved scaling a sustainable fashion brand from $50K to $500K in monthly revenue while maintaining profitability.",
+            "strategy": [
+              "Implemented creative testing framework with 3 new ads per week",
+              "Built custom audience segments based on LTV data",
+              "Developed lookalike audiences from best customers",
+              "Restructured campaign architecture for scaling efficiency"
+            ],
+            "results": {
+              "roas": "4.2x",
+              "cpaReduction": "-42%",
+              "revenueGrowth": "10x"
+            },
+            "testimonial": "Their systematic approach to scaling transformed our business. We finally have predictable, profitable growth."
+          },
+          "published": true,
+          "order": 0
+        },
+        {
+          "id": "proj-002",
+          "title": "Beauty Brand Profitability Turnaround",
+          "category": "E-commerce • Beauty",
+          "description": "Transformed an unprofitable beauty subscription from 0.8x to 3.5x ROAS through creative testing and audience restructuring.",
+          "metrics": [
+            { "value": "3.5x", "label": "ROAS" },
+            { "value": "-58%", "label": "CPA" },
+            { "value": "+180%", "label": "LTV" }
+          ],
+          "caseStudy": {
+            "client": "DTC Beauty Subscription",
+            "period": "6 months",
+            "overview": "A beauty subscription brand was losing money on paid acquisition with 0.8x ROAS.",
+            "strategy": [
+              "Audited existing campaigns to identify waste",
+              "Developed UGC creative strategy",
+              "Implemented proper attribution tracking",
+              "Built retention-focused audience segments"
+            ],
+            "results": {
+              "roas": "3.5x",
+              "cpaReduction": "-58%",
+              "ltvIncrease": "+180%"
+            },
+            "testimonial": "We went from burning cash to profitable growth in just 3 months."
+          },
+          "published": true,
+          "order": 1
+        },
+        {
+          "id": "proj-003",
+          "title": "Global Expansion: 3 Markets Launch",
+          "category": "DTC • Health & Wellness",
+          "description": "Launched a wellness brand in UK, Canada, and Australia, achieving positive ROAS within 30 days in each market.",
+          "metrics": [
+            { "value": "2.8x", "label": "ROAS" },
+            { "value": "3", "label": "Markets" },
+            { "value": "$1.2M", "label": "Q1 Revenue" }
+          ],
+          "caseStudy": {
+            "client": "Health & Wellness Brand",
+            "period": "3 months",
+            "overview": "Successfully launched a wellness brand in UK, Canada, and Australia simultaneously.",
+            "strategy": [
+              "Localized creative for each market",
+              "Built region-specific audiences",
+              "Implemented currency-aware bidding",
+              "Established local fulfillment partnerships"
+            ],
+            "results": {
+              "roas": "2.8x",
+              "markets": "3",
+              "q1Revenue": "$1.2M"
+            },
+            "testimonial": "Expanding internationally seemed daunting, but their expertise made it feel seamless."
+          },
+          "published": true,
+          "order": 2
+        },
+        {
+          "id": "proj-004",
+          "title": "B2B SaaS Lead Generation",
+          "category": "SaaS • B2B",
+          "description": "Built a LinkedIn + Google lead gen engine for a B2B SaaS, reducing CAC by 65% while doubling MQL volume.",
+          "metrics": [
+            { "value": "-65%", "label": "CAC" },
+            { "value": "2x", "label": "MQLs" },
+            { "value": "$85", "label": "Lead Cost" }
+          ],
+          "caseStudy": {
+            "client": "Enterprise SaaS Company",
+            "period": "Ongoing",
+            "overview": "Built a comprehensive lead generation engine for a B2B SaaS company.",
+            "strategy": [
+              "Developed account-based marketing approach",
+              "Created high-intent keyword strategy",
+              "Built lead scoring integration",
+              "Implemented offline conversion tracking"
+            ],
+            "results": {
+              "cacReduction": "-65%",
+              "mqls": "2x increase",
+              "leadCost": "$85"
+            },
+            "testimonial": "Our sales team now has more qualified leads than they can handle."
+          },
+          "published": true,
+          "order": 3
+        },
+        {
+          "id": "proj-005",
+          "title": "Custom Analytics Dashboard",
+          "category": "Tool • Analytics",
+          "description": "Built a custom attribution dashboard integrating 5 data sources, providing unified view of marketing performance.",
+          "metrics": [
+            { "value": "5", "label": "Integrations" },
+            { "value": "Real-time", "label": "Updates" },
+            { "value": "-40%", "label": "Report Time" }
+          ],
+          "caseStudy": {
+            "client": "Multi-brand E-commerce Group",
+            "period": "2 months development",
+            "overview": "Built a custom attribution dashboard integrating data from Meta, Google, TikTok, and Shopify.",
+            "strategy": [
+              "Integrated 5 data sources via APIs",
+              "Built custom attribution model",
+              "Implemented real-time data syncing",
+              "Created automated reporting workflows"
+            ],
+            "results": {
+              "integrations": "5",
+              "updateTime": "Real-time",
+              "reportTime": "-40%"
+            },
+            "testimonial": "Finally, we have a single source of truth for all our marketing data."
+          },
+          "published": true,
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "enabled": true,
+      "order": 5,
+      "title": "Experience",
+      "data": {
+        "sectionLabel": "Career Journey",
+        "items": [
+          {
+            "title": "Senior Media Buyer & Performance Strategist",
+            "company": "Independent Consultant",
+            "date": "2022 - Present",
+            "description": "Leading performance marketing strategy for e-commerce brands. Managing $2M+ annual ad spend with consistent 3-5x ROAS.",
+            "highlights": [
+              "Managed $8M+ in cumulative ad spend",
+              "Average 4.2x ROAS across portfolio",
+              "Built custom analytics tools for clients"
+            ]
+          },
+          {
+            "title": "Head of Paid Media",
+            "company": "Growth Agency",
+            "date": "2020 - 2022",
+            "description": "Led a team of 4 media buyers managing $500K/month in ad spend across 15+ client accounts.",
+            "highlights": [
+              "Team of 4 media buyers",
+              "15+ concurrent client accounts",
+              "35% performance improvement"
+            ]
+          },
+          {
+            "title": "Senior Performance Marketer",
+            "company": "DTC Brand",
+            "date": "2018 - 2020",
+            "description": "In-house media buyer for a fast-growing DTC brand. Scaled paid social from $50K to $300K monthly spend.",
+            "highlights": [
+              "6x spend scaling",
+              "ROAS improvement 1.8x → 3.2x",
+              "Built attribution infrastructure"
+            ]
+          },
+          {
+            "title": "Digital Marketing Specialist",
+            "company": "Marketing Agency",
+            "date": "2016 - 2018",
+            "description": "Started career managing paid campaigns for SMB clients across various industries.",
+            "highlights": [
+              "50+ client campaigns",
+              "Certified in Google & Meta",
+              "Foundation in direct response"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "services",
+      "enabled": true,
+      "order": 6,
+      "title": "Services",
+      "data": {
+        "sectionLabel": "What I Offer",
+        "subtitle": "Comprehensive solutions for scaling your paid media performance",
+        "services": [
+          {
+            "title": "Account Audit",
+            "description": "Comprehensive audit of your ad accounts with prioritized recommendations for improvement.",
+            "features": [
+              "Full account health check",
+              "Tracking implementation review",
+              "Competitor analysis",
+              "Prioritized action plan"
+            ],
+            "price": "Starting at $1,500",
+            "featured": false
+          },
+          {
+            "title": "Full-Service Management",
+            "description": "Complete campaign management from strategy to execution. Includes creative direction, audience building, ongoing optimization.",
+            "features": [
+              "Strategy & planning",
+              "Campaign creation & management",
+              "Creative testing framework",
+              "Weekly reporting & calls",
+              "Monthly strategy reviews"
+            ],
+            "price": "Starting at $2,500/mo",
+            "featured": true
+          },
+          {
+            "title": "Strategic Consulting",
+            "description": "High-level strategic guidance for in-house teams. Perfect for brands with internal media buyers.",
+            "features": [
+              "Monthly strategy sessions",
+              "Team training & mentorship",
+              "Process documentation",
+              "Performance reviews"
+            ],
+            "price": "Starting at $1,000/mo",
+            "featured": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "objective",
+      "enabled": true,
+      "order": 7,
+      "title": "Career Objective",
+      "data": {
+        "statement": "I'm committed to building systems that transform paid media from a cost center into a predictable growth engine. My goal is to help e-commerce brands achieve sustainable profitability through data-driven optimization, transparent practices, and continuous innovation in marketing technology.",
+        "values": [
+          { "icon": "📈", "text": "Sustainable Growth" },
+          { "icon": "🔍", "text": "Data-Driven Decisions" },
+          { "icon": "🤝", "text": "Transparent Partnerships" },
+          { "icon": "⚡", "text": "Continuous Innovation" }
+        ]
+      }
+    },
+    {
+      "id": "contact",
+      "enabled": true,
+      "order": 8,
+      "title": "Contact",
+      "data": {
+        "sectionLabel": "Get In Touch",
+        "title": "Let's Discuss Your Goals",
+        "description": "Whether you're looking to scale your ad spend profitably, need an account audit, or want to explore working together, I'd love to hear from you.",
+        "responseTime": "Within 24 hours"
+      }
+    },
+    {
+      "id": "footer",
+      "enabled": true,
+      "order": 9,
+      "title": "Footer",
+      "data": {
+        "tagline": "Building profitable growth systems for e-commerce brands.",
+        "showBackToTop": true
+      }
+    }
+  ],
+  "faqs": [],
+  "version": "1.0.0",
+  "lastModified": "2024-01-01T00:00:00.000Z"
+}

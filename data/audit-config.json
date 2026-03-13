@@ -1,0 +1,456 @@
+{
+  "thresholds": {
+    "roasThreshold": {
+      "value": 1.5,
+      "label": "Minimum ROAS Threshold",
+      "description": "Flag campaigns below this ROAS value",
+      "unit": "multiplier",
+      "min": 0.1,
+      "max": 10,
+      "step": 0.1
+    },
+    "cpaMultiplier": {
+      "value": 1.3,
+      "label": "CPA Target Multiplier",
+      "description": "Flag when CPA exceeds target × multiplier",
+      "unit": "multiplier",
+      "min": 1,
+      "max": 3,
+      "step": 0.1
+    },
+    "minConversions": {
+      "value": 30,
+      "label": "Minimum Conversions for Significance",
+      "description": "Warn if total conversions below this threshold",
+      "unit": "count",
+      "min": 10,
+      "max": 100,
+      "step": 5
+    },
+    "eventMismatchThreshold": {
+      "value": 0.25,
+      "label": "Event Mismatch Threshold",
+      "description": "Maximum allowed pixel/server event variance",
+      "unit": "percent",
+      "min": 0.05,
+      "max": 0.5,
+      "step": 0.05
+    },
+    "funnelDropoffThreshold": {
+      "value": 0.6,
+      "label": "Funnel Drop-off Threshold",
+      "description": "Flag funnel stages with this drop-off rate",
+      "unit": "percent",
+      "min": 0.3,
+      "max": 0.9,
+      "step": 0.05
+    },
+    "pageSpeedThreshold": {
+      "value": 3,
+      "label": "Page Load Time Threshold",
+      "description": "Warn if page load time exceeds this value",
+      "unit": "seconds",
+      "min": 1,
+      "max": 10,
+      "step": 0.5
+    },
+    "budgetImbalanceThreshold": {
+      "value": 0.7,
+      "label": "Budget Imbalance Threshold",
+      "description": "Flag when one creative has >70% spend but <30% conversions",
+      "unit": "percent",
+      "min": 0.5,
+      "max": 0.9,
+      "step": 0.05
+    },
+    "matchRateThreshold": {
+      "value": 0.6,
+      "label": "Match Rate Threshold",
+      "description": "Flag customer match rates below this value",
+      "unit": "percent",
+      "min": 0.3,
+      "max": 0.9,
+      "step": 0.05
+    }
+  },
+  "formulas": [
+    {
+      "id": "aov",
+      "name": "Average Order Value",
+      "formula": "revenue / purchases",
+      "description": "Calculated as total revenue divided by number of purchases",
+      "category": "performance"
+    },
+    {
+      "id": "roas",
+      "name": "Return on Ad Spend",
+      "formula": "revenue / spend",
+      "description": "Revenue generated per dollar spent on advertising",
+      "category": "performance"
+    },
+    {
+      "id": "cpa",
+      "name": "Cost Per Acquisition",
+      "formula": "spend / purchases",
+      "description": "Average cost to acquire one customer",
+      "category": "performance"
+    },
+    {
+      "id": "ctr",
+      "name": "Click-Through Rate",
+      "formula": "clicks / impressions",
+      "description": "Percentage of impressions that resulted in clicks",
+      "category": "engagement"
+    },
+    {
+      "id": "cvr",
+      "name": "Conversion Rate",
+      "formula": "purchases / clicks",
+      "description": "Percentage of clicks that resulted in purchases",
+      "category": "performance"
+    },
+    {
+      "id": "cpm",
+      "name": "Cost Per Mille",
+      "formula": "(spend / impressions) * 1000",
+      "description": "Cost per 1,000 impressions",
+      "category": "cost"
+    },
+    {
+      "id": "cpc",
+      "name": "Cost Per Click",
+      "formula": "spend / clicks",
+      "description": "Average cost for each click",
+      "category": "cost"
+    }
+  ],
+  "rules": [
+    {
+      "id": "missingConversions",
+      "enabled": true,
+      "severity": "P0",
+      "title": "Missing Conversions",
+      "description": "Detects revenue without corresponding purchases",
+      "category": "tracking",
+      "condition": {
+        "type": "comparison",
+        "field": "revenue",
+        "operator": ">",
+        "value": 0,
+        "and": {
+          "field": "purchases",
+          "operator": "==",
+          "value": 0
+        }
+      },
+      "impact": "High - May result in incorrect CPA calculations and underreported performance",
+      "confidence": "High",
+      "recommendedFix": "1. Check your conversion pixel installation\n2. Verify purchase event is firing on thank-you page\n3. Test with a test purchase\n4. Check for ad blockers interfering with tracking",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "eventMismatch",
+      "enabled": true,
+      "severity": "P1",
+      "title": "Pixel/Server Event Mismatch",
+      "description": "Detects significant discrepancy between pixel and server events",
+      "category": "tracking",
+      "condition": {
+        "type": "formula",
+        "expression": "abs(pixel_events - server_events) / max(pixel_events, server_events, 1)",
+        "operator": ">",
+        "thresholdRef": "eventMismatchThreshold"
+      },
+      "impact": "Medium - May affect attribution accuracy and audience building",
+      "confidence": "High",
+      "recommendedFix": "1. Compare browser vs server event timestamps\n2. Check for duplicate events\n3. Verify event deduplication is implemented\n4. Review server-side tracking setup",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "currencyInconsistency",
+      "enabled": true,
+      "severity": "P1",
+      "title": "Multiple Currencies Detected",
+      "description": "Detects mixed currencies in the dataset",
+      "category": "data_quality",
+      "condition": {
+        "type": "unique_count",
+        "field": "currency",
+        "operator": ">",
+        "value": 1
+      },
+      "impact": "Medium - May skew performance metrics if not normalized",
+      "confidence": "High",
+      "recommendedFix": "1. Standardize currency before importing\n2. Apply exchange rates to normalize\n3. Set a base currency for reporting\n4. Use currency conversion API for real-time rates",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "highCpa",
+      "enabled": true,
+      "severity": "P0",
+      "title": "CPA Exceeds Target",
+      "description": "Flags campaigns where CPA exceeds target by multiplier",
+      "category": "performance",
+      "condition": {
+        "type": "formula",
+        "expression": "spend / purchases",
+        "operator": ">",
+        "field": "cpa_target",
+        "thresholdRef": "cpaMultiplier",
+        "multiply": true
+      },
+      "impact": "High - Overspending on acquisition, reducing profitability",
+      "confidence": "High",
+      "recommendedFix": "1. Pause or reduce budget on underperforming campaigns\n2. Review audience targeting\n3. Test new ad creatives\n4. Optimize landing page conversion rate\n5. Narrow targeting to higher-intent audiences",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "lowRoas",
+      "enabled": true,
+      "severity": "P1",
+      "title": "Low ROAS Campaigns",
+      "description": "Flags campaigns with ROAS below threshold",
+      "category": "performance",
+      "condition": {
+        "type": "formula",
+        "expression": "revenue / spend",
+        "operator": "<",
+        "thresholdRef": "roasThreshold",
+        "minSpend": 100
+      },
+      "impact": "Medium to High - Unprofitable spend reducing overall account performance",
+      "confidence": "High",
+      "recommendedFix": "1. Review creative fatigue - rotate ads\n2. Test new audiences\n3. Adjust bidding strategy\n4. Check for seasonal factors\n5. Consider pausing if no improvement after optimization",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "lowMatchRate",
+      "enabled": true,
+      "severity": "P1",
+      "title": "Low Match Rate",
+      "description": "Detects low customer list match rates",
+      "category": "audience",
+      "condition": {
+        "type": "comparison",
+        "field": "match_rate",
+        "operator": "<",
+        "thresholdRef": "matchRateThreshold",
+        "and": {
+          "field": "match_rate",
+          "operator": ">",
+          "value": 0
+        }
+      },
+      "impact": "Medium - Reduces effectiveness of audience targeting and lookalikes",
+      "confidence": "High",
+      "recommendedFix": "1. Verify Customer List ID formatting\n2. Use more customer data points (email, phone, name)\n3. Ensure proper hashing (SHA256)\n4. Update customer lists more frequently",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "duplicateTransactions",
+      "enabled": true,
+      "severity": "P0",
+      "title": "Duplicate Transaction IDs",
+      "description": "Detects duplicate transaction IDs in the dataset",
+      "category": "data_quality",
+      "condition": {
+        "type": "duplicate_count",
+        "field": "transaction_id",
+        "operator": ">",
+        "value": 1
+      },
+      "impact": "High - Overreports revenue and conversions",
+      "confidence": "High",
+      "recommendedFix": "1. Implement deduplication at data source\n2. Use unique transaction IDs\n3. Check for multiple pixel fires\n4. Verify server-side tracking is not double-counting",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "utmInconsistency",
+      "enabled": true,
+      "severity": "P1",
+      "title": "Missing UTM Parameters",
+      "description": "Detects rows missing UTM campaign parameters",
+      "category": "tracking",
+      "condition": {
+        "type": "empty",
+        "field": "utm_campaign"
+      },
+      "impact": "Medium - Reduces ability to track campaign performance accurately",
+      "confidence": "High",
+      "recommendedFix": "1. Set up UTM tracking for all campaigns\n2. Use UTM builder tools\n3. Create UTM naming conventions\n4. Configure auto-tagging where available",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "funnelDropoff",
+      "enabled": true,
+      "severity": "P1",
+      "title": "High Checkout Drop-off",
+      "description": "Estimates high drop-off between checkout and purchase",
+      "category": "conversion",
+      "condition": {
+        "type": "estimated_dropoff",
+        "fromStage": "checkout",
+        "toStage": "purchase",
+        "operator": ">",
+        "thresholdRef": "funnelDropoffThreshold"
+      },
+      "impact": "Medium - Revenue loss from abandoned checkouts",
+      "confidence": "Medium",
+      "recommendedFix": "1. Simplify checkout process\n2. Add guest checkout option\n3. Display trust signals\n4. Implement abandoned cart emails\n5. Check for shipping cost shock",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "insufficientSample",
+      "enabled": true,
+      "severity": "P2",
+      "title": "Limited Sample Size",
+      "description": "Flags datasets with insufficient conversions for statistical significance",
+      "category": "data_quality",
+      "condition": {
+        "type": "aggregate",
+        "field": "purchases",
+        "aggregation": "sum",
+        "operator": "<",
+        "thresholdRef": "minConversions"
+      },
+      "impact": "Low - Results may not be statistically significant",
+      "confidence": "High",
+      "recommendedFix": "1. Continue collecting data before making major decisions\n2. Consider broader targeting to increase volume\n3. Be cautious about scaling based on limited data\n4. Use wider confidence intervals for analysis",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "budgetImbalance",
+      "enabled": true,
+      "severity": "P1",
+      "title": "Imbalanced Budget Allocation",
+      "description": "Detects creatives with high spend share but low conversion share",
+      "category": "performance",
+      "condition": {
+        "type": "ratio_imbalance",
+        "spendField": "spend",
+        "conversionField": "purchases",
+        "groupBy": "ad",
+        "spendThresholdRef": "budgetImbalanceThreshold",
+        "conversionThreshold": 0.3
+      },
+      "impact": "Medium - Budget not optimized for best performers",
+      "confidence": "Medium",
+      "recommendedFix": "1. Reallocate budget to better-performing creatives\n2. Test new creative variations\n3. Use automated creative optimization\n4. Review creative messaging",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "pixelNotFiring",
+      "enabled": true,
+      "severity": "P0",
+      "title": "Pixel Events Not Recording",
+      "description": "Detects purchases without corresponding pixel events",
+      "category": "tracking",
+      "condition": {
+        "type": "comparison",
+        "field": "purchases",
+        "operator": ">",
+        "value": 0,
+        "and": {
+          "field": "pixel_events",
+          "operator": "==",
+          "value": 0
+        }
+      },
+      "impact": "Critical - Platform cannot optimize for conversions",
+      "confidence": "High",
+      "recommendedFix": "1. Check pixel helper tool for errors\n2. Verify pixel is installed on all pages\n3. Check for JavaScript errors\n4. Test with Facebook Events Manager\n5. Consider implementing Conversions API",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "pageSpeed",
+      "enabled": true,
+      "severity": "P1",
+      "title": "Slow Page Load Times",
+      "description": "Detects landing pages with slow load times",
+      "category": "performance",
+      "condition": {
+        "type": "comparison",
+        "field": "page_load_time",
+        "operator": ">",
+        "thresholdRef": "pageSpeedThreshold"
+      },
+      "impact": "Medium - Every second delay reduces conversions ~7%",
+      "confidence": "High",
+      "recommendedFix": "1. Optimize images (WebP format, compression)\n2. Minimize JavaScript\n3. Use CDN for static assets\n4. Enable browser caching\n5. Consider lazy loading\n6. Use PageSpeed Insights for specific recommendations",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "adCopyFlags",
+      "enabled": true,
+      "severity": "P2",
+      "title": "Ad Copy Policy Considerations",
+      "description": "Flags ads with potentially problematic content patterns",
+      "category": "compliance",
+      "condition": {
+        "type": "regex_patterns",
+        "field": "ad_copy",
+        "patterns": [
+          {
+            "name": "Guarantee claims",
+            "pattern": "\\b(guarantee|guaranteed)\\s+(results|success|income|profit)\\b"
+          },
+          {
+            "name": "Urgency manipulation",
+            "pattern": "\\b(limited time|act now|don't wait|hurry)\\b.*\\b(buy|purchase|order)\\b"
+          },
+          {
+            "name": "Income claims",
+            "pattern": "\\$\\d+.*?(day|week|month|year).*?(guaranteed|easy|simple)\\b"
+          }
+        ]
+      },
+      "impact": "Low - Informational only, manual review recommended",
+      "confidence": "Low",
+      "recommendedFix": "1. Review flagged ad copy manually\n2. Ensure claims are substantiated\n3. Avoid misleading urgency language\n4. Check platform-specific ad policies\n5. Consider A/B testing alternative copy",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "attributionMismatch",
+      "enabled": true,
+      "severity": "P2",
+      "title": "Varying Attribution Windows",
+      "description": "Detects different attribution windows across campaigns",
+      "category": "tracking",
+      "condition": {
+        "type": "unique_count",
+        "field": "attribution_window",
+        "operator": ">",
+        "value": 1
+      },
+      "impact": "Low - May cause confusion when comparing campaign performance",
+      "confidence": "Medium",
+      "recommendedFix": "1. Standardize attribution window across campaigns\n2. Document which window is used for each campaign type\n3. Consider using platform default (7-day click, 1-day view)",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "modifiedAt": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "ruleCategories": [
+    { "id": "tracking", "label": "Tracking & Attribution", "icon": "link" },
+    { "id": "performance", "label": "Performance", "icon": "trending-up" },
+    { "id": "data_quality", "label": "Data Quality", "icon": "database" },
+    { "id": "conversion", "label": "Conversion", "icon": "target" },
+    { "id": "audience", "label": "Audience", "icon": "users" },
+    { "id": "compliance", "label": "Compliance", "icon": "shield" }
+  ],
+  "version": "1.0.0",
+  "lastModified": "2024-01-01T00:00:00.000Z"
+}
