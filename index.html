@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website for a Media Buyer / Digital Marketer specializing in profitable scale systems and high-LTV customer acquisition.">
+    <meta name="keywords" content="Media Buyer, Digital Marketer, Ad Campaign Optimization, ROAS, CPA, KPI Dashboard">
+    <meta name="author" content="Media Buyer Portfolio">
+    <title>Media Buyer Portfolio | Scalable Profit Engineering</title>
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    
+    <!-- PapaParse CDN for CSV parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    
+    <!-- html2pdf for PDF export -->
+    <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo" aria-label="Home">
+                <span class="logo-text">MB</span>
+                <span class="logo-accent">Portfolio</span>
+            </a>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="#hero" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="#dashboard" class="nav-link" role="menuitem">Dashboard</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#services" class="nav-link" role="menuitem">Services</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+            </ul>
+            
+            <button class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-bg-shapes" aria-hidden="true">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            
+            <div class="container hero-container">
+                <div class="hero-content fade-in-up">
+                    <span class="hero-badge">Media Buyer & Digital Marketer</span>
+                    <h1 id="hero-title" class="hero-title">
+                        Scalable Profit Engineering
+                        <span class="hero-title-accent">— where data meets buyer psychology.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        I've managed <strong>$8,000,000+</strong> in ad budgets to move e-commerce stores from stagnation to profitable scale. We don't buy clicks — we build systems that attract high-LTV customers.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#dashboard" class="btn btn-accent">
+                            <span>Request Free Audit</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-value">$8M+</span>
+                            <span class="stat-label">Ad Spend Managed</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-value">3.2x</span>
+                            <span class="stat-label">Avg. ROAS</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-value">150+</span>
+                            <span class="stat-label">Campaigns Optimized</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="hero-card-stack">
+                        <div class="floating-card card-1">
+                            <div class="mini-chart">
+                                <div class="bar" style="height: 40%"></div>
+                                <div class="bar" style="height: 65%"></div>
+                                <div class="bar" style="height: 45%"></div>
+                                <div class="bar" style="height: 80%"></div>
+                                <div class="bar" style="height: 70%"></div>
+                                <div class="bar" style="height: 95%"></div>
+                            </div>
+                            <span class="card-label">ROAS: 4.2x</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="mini-metric">
+                                <span class="metric-up">↑ 32%</span>
+                                <span class="metric-name">Conversions</span>
+                            </div>
+                        </div>
+                        <div class="floating-card card-3">
+                            <div class="mini-metric">
+                                <span class="metric-down">↓ 18%</span>
+                                <span class="metric-name">CPA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#dashboard" class="scroll-indicator" aria-label="Scroll to Dashboard">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll Down</span>
+            </a>
+        </section>
+        
+        <!-- Live KPI Dashboard Section -->
+        <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-title">
+            <div class="container">
+                <header class="section-header fade-in-up">
+                    <h2 id="dashboard-title" class="section-title">Live KPI Dashboard</h2>
+                    <p class="section-subtitle">Upload your campaign CSV to run an instant health check</p>
+                </header>
+                
+                <!-- Privacy Notice -->
+                <div class="privacy-notice fade-in-up" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Data is processed locally in your browser and not uploaded. Your campaign data never leaves your device.</span>
+                </div>
+                
+                <!-- Dashboard Controls -->
+                <div class="dashboard-controls fade-in-up">
+                    <!-- Input Method Tabs -->
+                    <div class="input-tabs" role="tablist" aria-label="Data input methods">
+                        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-manual" id="btn-manual" data-tab="manual">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                            Manual Entry
+                        </button>
+                        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-csv" id="btn-csv" data-tab="csv">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            Upload CSV
+                        </button>
+                        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-json" id="btn-json" data-tab="json">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            Paste JSON
+                        </button>
+                    </div>
+                    
+                    <!-- Sample Button -->
+                    <button class="btn btn-outline sample-btn" id="load-sample-btn" title="Load sample campaign data for demo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Load Sample Data
+                    </button>
+                    
+                    <!-- Settings Button -->
+                    <button class="btn btn-icon settings-btn" id="settings-btn" title="Configure audit thresholds" aria-label="Open settings">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Settings Panel (Hidden by default) -->
+                <div class="settings-panel" id="settings-panel" hidden>
+                    <div class="settings-content">
+                        <div class="settings-header">
+                            <h3>Audit Configuration</h3>
+                            <button class="btn btn-icon close-settings" aria-label="Close settings">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="settings-body">
+                            <div class="setting-group">
+                                <label for="roas-threshold">Minimum ROAS Threshold</label>
+                                <input type="number" id="roas-threshold" value="1.5" step="0.1" min="0.1" max="10">
+                                <span class="setting-hint">Flag campaigns below this ROAS</span>
+                            </div>
+                            <div class="setting-group">
+                                <label for="cpa-multiplier">CPA Target Multiplier</label>
+                                <input type="number" id="cpa-multiplier" value="1.3" step="0.1" min="1" max="3">
+                                <span class="setting-hint">Flag when CPA exceeds target × multiplier</span>
+                            </div>
+                            <div class="setting-group">
+                                <label for="min-conversions">Minimum Conversions for Significance</label>
+                                <input type="number" id="min-conversions" value="30" step="5" min="10" max="100">
+                                <span class="setting-hint">Warn if total conversions below this</span>
+                            </div>
+                            <div class="setting-group">
+                                <label for="event-mismatch-threshold">Event Mismatch Threshold (%)</label>
+                                <input type="number" id="event-mismatch-threshold" value="25" step="5" min="5" max="50">
+                                <span class="setting-hint">Max allowed pixel/server event variance</span>
+                            </div>
+                            <div class="setting-group">
+                                <label for="funnel-dropoff-threshold">Funnel Drop-off Threshold (%)</label>
+                                <input type="number" id="funnel-dropoff-threshold" value="60" step="5" min="30" max="90">
+                                <span class="setting-hint">Flag funnel stages with this drop-off</span>
+                            </div>
+                            <div class="setting-group">
+                                <label for="page-speed-threshold">Page Load Time Threshold (s)</label>
+                                <input type="number" id="page-speed-threshold" value="3" step="0.5" min="1" max="10">
+                                <span class="setting-hint">Warn if page load exceeds this</span>
+                            </div>
+                        </div>
+                        <div class="settings-footer">
+                            <button class="btn btn-outline reset-settings" id="reset-settings">Reset to Defaults</button>
+                            <button class="btn btn-primary apply-settings" id="apply-settings">Apply Settings</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab Content Panels -->
+                <div class="tab-panels">
+                    <!-- Manual Entry Panel -->
+                    <div class="tab-panel active" id="tab-manual" role="tabpanel" aria-labelledby="btn-manual">
+                        <form id="manual-form" class="manual-form">
+                            <div class="form-grid">
+                                <fieldset class="form-fieldset">
+                                    <legend>Campaign Basics</legend>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="date-range-start">Start Date</label>
+                                            <input type="date" id="date-range-start" name="date_start" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="date-range-end">End Date</label>
+                                            <input type="date" id="date-range-end" name="date_end" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="currency">Currency</label>
+                                            <select id="currency" name="currency">
+                                                <option value="USD">USD ($)</option>
+                                                <option value="EUR">EUR (€)</option>
+                                                <option value="GBP">GBP (£)</option>
+                                                <option value="CAD">CAD ($)</option>
+                                                <option value="AUD">AUD ($)</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="budget">Budget</label>
+                                            <input type="number" id="budget" name="budget" step="0.01" min="0" placeholder="10000.00">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                
+                                <fieldset class="form-fieldset">
+                                    <legend>Performance Metrics</legend>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="spend">Spend</label>
+                                            <input type="number" id="spend" name="spend" step="0.01" min="0" placeholder="5000.00" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="clicks">Clicks</label>
+                                            <input type="number" id="clicks" name="clicks" min="0" placeholder="15000" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="impressions">Impressions</label>
+                                            <input type="number" id="impressions" name="impressions" min="0" placeholder="500000" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="purchases">Purchases</label>
+                                            <input type="number" id="purchases" name="purchases" min="0" placeholder="150" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="revenue">Revenue</label>
+                                            <input type="number" id="revenue" name="revenue" step="0.01" min="0" placeholder="15000.00" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="aov">AOV (Auto-calculated)</label>
+                                            <input type="number" id="aov" name="aov" step="0.01" min="0" readonly placeholder="Auto">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                
+                                <fieldset class="form-fieldset">
+                                    <legend>Target & Attribution</legend>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="cpa-target">CPA Target</label>
+                                            <input type="number" id="cpa-target" name="cpa_target" step="0.01" min="0" placeholder="30.00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="attribution-window">Attribution Window (days)</label>
+                                            <input type="number" id="attribution-window" name="attribution_window" min="1" max="90" placeholder="7">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                
+                                <fieldset class="form-fieldset">
+                                    <legend>Event Tracking</legend>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="pixel-events">Pixel Events</label>
+                                            <input type="number" id="pixel-events" name="pixel_events" min="0" placeholder="145">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="server-events">Server Events</label>
+                                            <input type="number" id="server-events" name="server_events" min="0" placeholder="150">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="transaction-id">Transaction ID</label>
+                                            <input type="text" id="transaction-id" name="transaction_id" placeholder="TXN-001">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="page-load-time">Page Load Time (s)</label>
+                                            <input type="number" id="page-load-time" name="page_load_time" step="0.1" min="0" placeholder="1.5">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline clear-form-btn">Clear Form</button>
+                                <button type="submit" class="btn btn-primary run-audit-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                    </svg>
+                                    Run Audit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- CSV Upload Panel -->
+                    <div class="tab-panel" id="tab-csv" role="tabpanel" aria-labelledby="btn-csv" hidden>
+                        <div class="upload-zone" id="csv-upload-zone">
+                            <div class="upload-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <h3>Upload Campaign CSV</h3>
+                            <p>Drag and drop your CSV file here, or click to browse</p>
+                            <input type="file" id="csv-file-input" accept=".csv" hidden aria-label="Upload CSV file">
+                            <button class="btn btn-primary browse-btn">Browse Files</button>
+                            <span class="upload-hint">Expected columns: date, campaign, adset, ad, spend, clicks, impressions, purchases, revenue, currency, utm_campaign, pixel_events, server_events, transaction_id, page_load_time, ad_copy</span>
+                        </div>
+                        <div class="upload-preview" id="csv-preview" hidden>
+                            <div class="preview-header">
+                                <h4>CSV Preview</h4>
+                                <span class="file-info" id="csv-file-info"></span>
+                            </div>
+                            <div class="preview-table-container">
+                                <table class="preview-table" id="csv-preview-table">
+                                    <thead></thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <div class="preview-actions">
+                                <button class="btn btn-outline" id="csv-clear-btn">Clear</button>
+                                <button class="btn btn-primary run-audit-btn" id="csv-audit-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                    </svg>
+                                    Run Audit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- JSON Paste Panel -->
+                    <div class="tab-panel" id="tab-json" role="tabpanel" aria-labelledby="btn-json" hidden>
+                        <div class="json-input-container">
+                            <label for="json-input">Paste JSON Array</label>
+                            <textarea id="json-input" rows="12" placeholder='[
+  {
+    "date": "2024-01-01",
+    "campaign": "Summer_Sale",
+    "spend": 1250.50,
+    "clicks": 3420,
+    "impressions": 125000,
+    "purchases": 45,
+    "revenue": 8950.00,
+    "currency": "USD",
+    ...
+  }
+]'></textarea>
+                            <div class="json-field-mapping" id="json-field-mapping" hidden>
+                                <h4>Field Mapping</h4>
+                                <p>Your JSON fields don't match expected names. Map them below:</p>
+                                <div class="mapping-grid" id="mapping-grid"></div>
+                            </div>
+                            <div class="json-actions">
+                                <button class="btn btn-outline clear-json-btn">Clear</button>
+                                <button class="btn btn-primary parse-json-btn">Parse JSON</button>
+                                <button class="btn btn-accent run-audit-btn json-audit-btn" id="json-audit-btn" hidden>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                    </svg>
+                                    Run Audit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Results (Hidden until data is loaded) -->
+                <div class="dashboard-results" id="dashboard-results" hidden>
+                    <!-- Summary Cards -->
+                    <div class="summary-cards fade-in-up">
+                        <div class="summary-card">
+                            <div class="card-icon spend-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Total Spend</span>
+                                <span class="card-value" id="total-spend">$0</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-icon revenue-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Total Revenue</span>
+                                <span class="card-value" id="total-revenue">$0</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-icon roas-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Avg. ROAS</span>
+                                <span class="card-value" id="avg-roas">0.00x</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-icon cpa-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Avg. CPA</span>
+                                <span class="card-value" id="avg-cpa">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-icon conversion-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Total Conversions</span>
+                                <span class="card-value" id="total-conversions">0</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-icon ctr-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Avg. CTR</span>
+                                <span class="card-value" id="avg-ctr">0.00%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Charts Section -->
+                    <div class="charts-section fade-in-up">
+                        <div class="chart-container time-series-chart">
+                            <div class="chart-header">
+                                <h3>Performance Over Time</h3>
+                                <div class="chart-controls">
+                                    <select id="time-series-metric" aria-label="Select metric to display">
+                                        <option value="all">All Metrics</option>
+                                        <option value="spend">Spend</option>
+                                        <option value="revenue">Revenue</option>
+                                        <option value="roas">ROAS</option>
+                                        <option value="cpa">CPA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="timeSeriesChart" aria-label="Time series chart showing performance metrics over time" role="img"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="charts-row">
+                            <div class="chart-container funnel-chart">
+                                <div class="chart-header">
+                                    <h3>Conversion Funnel</h3>
+                                </div>
+                                <div class="chart-wrapper">
+                                    <canvas id="funnelChart" aria-label="Funnel chart showing conversion stages" role="img"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div class="chart-container events-chart">
+                                <div class="chart-header">
+                                    <h3>Pixel vs Server Events</h3>
+                                </div>
+                                <div class="chart-wrapper">
+                                    <canvas id="eventsChart" aria-label="Bar chart comparing pixel events to server events" role="img"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Alerts Widget -->
+                    <div class="alerts-widget fade-in-up">
+                        <div class="alerts-header">
+                            <h3>Alerts Summary</h3>
+                            <div class="alert-counts">
+                                <span class="alert-count errors" id="error-count">0 Errors</span>
+                                <span class="alert-count warnings" id="warning-count">0 Warnings</span>
+                                <span class="alert-count info" id="info-count">0 Info</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Campaigns Table -->
+                    <div class="campaigns-table-section fade-in-up">
+                        <div class="table-header">
+                            <h3>Top Campaigns</h3>
+                            <div class="table-controls">
+                                <label for="sort-by">Sort by:</label>
+                                <select id="sort-by">
+                                    <option value="roas">ROAS</option>
+                                    <option value="cpa">CPA</option>
+                                    <option value="conversions">Conversions</option>
+                                    <option value="spend">Spend</option>
+                                    <option value="revenue">Revenue</option>
+                                </select>
+                                <button class="btn btn-outline btn-sm sort-direction" id="sort-direction" aria-label="Toggle sort direction">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 5h10"></path>
+                                        <path d="M11 9h7"></path>
+                                        <path d="M11 13h4"></path>
+                                        <polygon points="3 17 9 11 9 23 3 17"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table class="campaigns-table" id="campaigns-table">
+                                <thead>
+                                    <tr>
+                                        <th>Campaign</th>
+                                        <th>Spend</th>
+                                        <th>Revenue</th>
+                                        <th>ROAS</th>
+                                        <th>CPA</th>
+                                        <th>Conversions</th>
+                                        <th>CTR</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Audit Results Section -->
+                <div class="audit-results" id="audit-results" hidden>
+                    <div class="audit-header fade-in-up">
+                        <h3>Audit Findings</h3>
+                        <div class="audit-actions">
+                            <button class="btn btn-outline share-btn" id="share-snapshot-btn" title="Share audit snapshot via URL">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                </svg>
+                                Share Snapshot
+                            </button>
+                            <button class="btn btn-outline export-json-btn" id="export-json-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Export JSON
+                            </button>
+                            <button class="btn btn-primary export-pdf-btn" id="export-pdf-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                </svg>
+                                Download Report (PDF)
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="findings-list" id="findings-list">
+                        <!-- Findings will be dynamically inserted here -->
+                    </div>
+                    
+                    <div class="rerun-audit fade-in-up">
+                        <button class="btn btn-accent" id="rerun-audit-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                            </svg>
+                            Re-run Audit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image fade-in-up">
+                        <div class="image-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span>Photo Placeholder</span>
+                        </div>
+                        <div class="image-decoration"></div>
+                    </div>
+                    
+                    <div class="about-content fade-in-up" style="animation-delay: 0.2s;">
+                        <span class="section-label">About Me</span>
+                        <h2 id="about-title" class="section-title">Turning Ad Spend Into Sustainable Growth</h2>
+                        <div class="about-text">
+                            <p>With over 8 years of experience in digital marketing and media buying, I've developed a systematic approach to campaign optimization that prioritizes sustainable growth over short-term gains. My methodology combines rigorous data analysis with deep understanding of consumer psychology and platform algorithms.</p>
+                            <p>I specialize in helping e-commerce brands scale profitably, having managed over $8 million in ad spend across Meta, Google, TikTok, and emerging platforms. My clients typically see a 40-60% improvement in ROAS within the first 90 days of working together.</p>
+                            <p>Beyond campaign management, I'm passionate about building systems and tools that democratize access to professional-grade marketing analytics. This portfolio showcases both my client work and the custom tools I've developed to make data-driven marketing more accessible.</p>
+                        </div>
+                        <div class="about-highlights">
+                            <div class="highlight">
+                                <span class="highlight-icon">🎯</span>
+                                <span class="highlight-text">Meta Business Partner Certified</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">📊</span>
+                                <span class="highlight-text">Google Ads Certified</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">🏆</span>
+                                <span class="highlight-text">150+ Successful Campaigns</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section" aria-labelledby="skills-title">
+            <div class="container">
+                <header class="section-header fade-in-up">
+                    <span class="section-label">Expertise</span>
+                    <h2 id="skills-title" class="section-title">Skills & Capabilities</h2>
+                    <p class="section-subtitle">A comprehensive toolkit built through years of hands-on campaign management</p>
+                </header>
+                
+                <div class="skills-grid">
+                    <div class="skill-card fade-in-up">
+                        <div class="skill-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Media Buying</h3>
+                        <p class="skill-description">Strategic campaign planning, audience targeting, bid optimization, and budget allocation across all major platforms.</p>
+                        <ul class="skill-tags">
+                            <li>Meta Ads</li>
+                            <li>Google Ads</li>
+                            <li>TikTok Ads</li>
+                            <li>LinkedIn Ads</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="skill-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Analytics & Reporting</h3>
+                        <p class="skill-description">Deep-dive analysis of campaign performance, attribution modeling, and actionable insights generation.</p>
+                        <ul class="skill-tags">
+                            <li>GA4</li>
+                            <li>Looker Studio</li>
+                            <li>Triple Whale</li>
+                            <li>Northbeam</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="skill-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Conversion Optimization</h3>
+                        <p class="skill-description">Landing page optimization, A/B testing frameworks, funnel analysis, and conversion rate improvement.</p>
+                        <ul class="skill-tags">
+                            <li>A/B Testing</li>
+                            <li>CRO</li>
+                            <li>Heatmaps</li>
+                            <li>User Research</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-card fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="skill-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Technical Setup</h3>
+                        <p class="skill-description">Pixel implementation, server-side tracking, data layer configuration, and technical troubleshooting.</p>
+                        <ul class="skill-tags">
+                            <li>Meta CAPI</li>
+                            <li>GTM</li>
+                            <li>Server Tracking</li>
+                            <li>Shopify</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-card fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="skill-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Creative Strategy</h3>
+                        <p class="skill-description">Creative testing frameworks, ad copy optimization, visual storytelling, and creative performance analysis.</p>
+                        <ul class="skill-tags">
+                            <li>Creative Testing</li>
+                            <li>Ad Copy</li>
+                            <li>UGC</li>
+                            <li>Video Ads</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-card fade-in-up" style="animation-delay: 0.5s;">
+                        <div class="skill-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Audience Development</h3>
+                        <p class="skill-description">Lookalike modeling, audience segmentation, retargeting strategies, and customer journey mapping.</p>
+                        <ul class="skill-tags">
+                            <li>Lookalikes</li>
+                            <li>Retargeting</li>
+                            <li>Segments</li>
+                            <li>LTV Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section" aria-labelledby="projects-title">
+            <div class="container">
+                <header class="section-header fade-in-up">
+                    <span class="section-label">Portfolio</span>
+                    <h2 id="projects-title" class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Real results from real campaigns — each case study showcases systematic approaches to scaling</p>
+                </header>
+                
+                <div class="projects-grid">
+                    <article class="project-card fade-in-up" data-project="1">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <button class="btn btn-accent view-project-btn" data-project="1">View Case Study</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">E-commerce • Fashion</span>
+                            <h3 class="project-title">Fashion Brand Scale: 0 to $500K/month</h3>
+                            <p class="project-description">Scaled a sustainable fashion brand from $50K to $500K monthly revenue in 8 months while maintaining 4.2x ROAS.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">4.2x</span>
+                                    <span class="metric-label">ROAS</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">-42%</span>
+                                    <span class="metric-label">CPA</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">10x</span>
+                                    <span class="metric-label">Revenue</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card fade-in-up" style="animation-delay: 0.1s;" data-project="2">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <button class="btn btn-accent view-project-btn" data-project="2">View Case Study</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">E-commerce • Beauty</span>
+                            <h3 class="project-title">Beauty Brand Profitability Turnaround</h3>
+                            <p class="project-description">Transformed an unprofitable beauty subscription from 0.8x to 3.5x ROAS through creative testing and audience restructuring.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">3.5x</span>
+                                    <span class="metric-label">ROAS</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">-58%</span>
+                                    <span class="metric-label">CPA</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">+180%</span>
+                                    <span class="metric-label">LTV</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card fade-in-up" style="animation-delay: 0.2s;" data-project="3">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <button class="btn btn-accent view-project-btn" data-project="3">View Case Study</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">DTC • Health & Wellness</span>
+                            <h3 class="project-title">Global Expansion: 3 Markets Launch</h3>
+                            <p class="project-description">Launched a wellness brand in UK, Canada, and Australia, achieving positive ROAS within 30 days in each market.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">2.8x</span>
+                                    <span class="metric-label">ROAS</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">3</span>
+                                    <span class="metric-label">Markets</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">$1.2M</span>
+                                    <span class="metric-label">Q1 Revenue</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card fade-in-up" style="animation-delay: 0.3s;" data-project="4">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <button class="btn btn-accent view-project-btn" data-project="4">View Case Study</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">SaaS • B2B</span>
+                            <h3 class="project-title">B2B SaaS Lead Generation</h3>
+                            <p class="project-description">Built a LinkedIn + Google lead gen engine for a B2B SaaS, reducing CAC by 65% while doubling MQL volume.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">-65%</span>
+                                    <span class="metric-label">CAC</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">2x</span>
+                                    <span class="metric-label">MQLs</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">$85</span>
+                                    <span class="metric-label">Lead Cost</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card fade-in-up" style="animation-delay: 0.4s;" data-project="5">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <button class="btn btn-accent view-project-btn" data-project="5">View Case Study</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Tool • Analytics</span>
+                            <h3 class="project-title">Custom Analytics Dashboard</h3>
+                            <p class="project-description">Built a custom attribution dashboard integrating 5 data sources, providing unified view of marketing performance.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">5</span>
+                                    <span class="metric-label">Integrations</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">Real-time</span>
+                                    <span class="metric-label">Updates</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">-40%</span>
+                                    <span class="metric-label">Report Time</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section" aria-labelledby="experience-title">
+            <div class="container">
+                <header class="section-header fade-in-up">
+                    <span class="section-label">Career Journey</span>
+                    <h2 id="experience-title" class="section-title">Experience</h2>
+                </header>
+                
+                <div class="timeline">
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Senior Media Buyer & Performance Strategist</h3>
+                                <span class="timeline-company">Independent Consultant</span>
+                            </div>
+                            <span class="timeline-date">2022 - Present</span>
+                            <p class="timeline-description">Leading performance marketing strategy for e-commerce brands. Managing $2M+ annual ad spend with consistent 3-5x ROAS. Developed proprietary audit tools and frameworks now used by marketing teams worldwide.</p>
+                            <ul class="timeline-highlights">
+                                <li>Managed $8M+ in cumulative ad spend</li>
+                                <li>Average 4.2x ROAS across portfolio</li>
+                                <li>Built custom analytics tools for clients</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Head of Paid Media</h3>
+                                <span class="timeline-company">Growth Agency</span>
+                            </div>
+                            <span class="timeline-date">2020 - 2022</span>
+                            <p class="timeline-description">Led a team of 4 media buyers managing $500K/month in ad spend across 15+ client accounts. Implemented standardized reporting and optimization frameworks that improved agency-wide performance by 35%.</p>
+                            <ul class="timeline-highlights">
+                                <li>Team of 4 media buyers</li>
+                                <li>15+ concurrent client accounts</li>
+                                <li>35% performance improvement</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Senior Performance Marketer</h3>
+                                <span class="timeline-company">DTC Brand</span>
+                            </div>
+                            <span class="timeline-date">2018 - 2020</span>
+                            <p class="timeline-description">In-house media buyer for a fast-growing DTC brand. Scaled paid social from $50K to $300K monthly spend while improving ROAS from 1.8x to 3.2x. Established creative testing processes and attribution infrastructure.</p>
+                            <ul class="timeline-highlights">
+                                <li>6x spend scaling</li>
+                                <li>ROAS improvement 1.8x → 3.2x</li>
+                                <li>Built attribution infrastructure</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Digital Marketing Specialist</h3>
+                                <span class="timeline-company">Marketing Agency</span>
+                            </div>
+                            <span class="timeline-date">2016 - 2018</span>
+                            <p class="timeline-description">Started career managing paid campaigns for SMB clients across various industries. Learned fundamentals of direct response marketing and developed expertise in Google Ads and Facebook Ads Manager.</p>
+                            <ul class="timeline-highlights">
+                                <li>50+ client campaigns</li>
+                                <li>Certified in Google & Meta</li>
+                                <li>Foundation in direct response</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="services-section" aria-labelledby="services-title">
+            <div class="container">
+                <header class="section-header fade-in-up">
+                    <span class="section-label">What I Offer</span>
+                    <h2 id="services-title" class="section-title">Services</h2>
+                    <p class="section-subtitle">Comprehensive solutions for scaling your paid media performance</p>
+                </header>
+                
+                <div class="services-grid">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Account Audit</h3>
+                        <p class="service-description">Comprehensive audit of your ad accounts with prioritized recommendations for improvement. Identify wasted spend, optimization opportunities, and tracking issues.</p>
+                        <ul class="service-features">
+                            <li>Full account health check</li>
+                            <li>Tracking implementation review</li>
+                            <li>Competitor analysis</li>
+                            <li>Prioritized action plan</li>
+                        </ul>
+                        <span class="service-price">Starting at $1,500</span>
+                    </div>
+                    
+                    <div class="service-card featured fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="service-badge">Most Popular</div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Full-Service Management</h3>
+                        <p class="service-description">Complete campaign management from strategy to execution. Includes creative direction, audience building, ongoing optimization, and weekly reporting.</p>
+                        <ul class="service-features">
+                            <li>Strategy & planning</li>
+                            <li>Campaign creation & management</li>
+                            <li>Creative testing framework</li>
+                            <li>Weekly reporting & calls</li>
+                            <li>Monthly strategy reviews</li>
+                        </ul>
+                        <span class="service-price">Starting at $2,500/mo</span>
+                    </div>
+                    
+                    <div class="service-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Strategic Consulting</h3>
+                        <p class="service-description">High-level strategic guidance for in-house teams. Perfect for brands with internal media buyers who need expert oversight and direction.</p>
+                        <ul class="service-features">
+                            <li>Monthly strategy sessions</li>
+                            <li>Team training & mentorship</li>
+                            <li>Process documentation</li>
+                            <li>Performance reviews</li>
+                        </ul>
+                        <span class="service-price">Starting at $1,000/mo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Career Objective Section -->
+        <section id="objective" class="objective-section" aria-labelledby="objective-title">
+            <div class="container">
+                <div class="objective-content fade-in-up">
+                    <h2 id="objective-title">Career Objective</h2>
+                    <blockquote class="objective-statement">
+                        <p>"I'm committed to building systems that transform paid media from a cost center into a predictable growth engine. My goal is to help e-commerce brands achieve sustainable profitability through data-driven optimization, transparent practices, and continuous innovation in marketing technology."</p>
+                    </blockquote>
+                    <div class="objective-values">
+                        <div class="value">
+                            <span class="value-icon">📈</span>
+                            <span class="value-text">Sustainable Growth</span>
+                        </div>
+                        <div class="value">
+                            <span class="value-icon">🔍</span>
+                            <span class="value-text">Data-Driven Decisions</span>
+                        </div>
+                        <div class="value">
+                            <span class="value-icon">🤝</span>
+                            <span class="value-text">Transparent Partnerships</span>
+                        </div>
+                        <div class="value">
+                            <span class="value-icon">⚡</span>
+                            <span class="value-text">Continuous Innovation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info fade-in-up">
+                        <span class="section-label">Get In Touch</span>
+                        <h2 id="contact-title" class="section-title">Let's Discuss Your Goals</h2>
+                        <p class="contact-description">Whether you're looking to scale your ad spend profitably, need an account audit, or want to explore working together, I'd love to hear from you.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <div>
+                                    <span class="method-label">Email</span>
+                                    <a href="mailto:hello@example.com">hello@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <div>
+                                    <span class="method-label">Response Time</span>
+                                    <span>Within 24 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="YouTube" title="YouTube">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="GitHub" title="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container fade-in-up" style="animation-delay: 0.2s;">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name">Name <span class="required">*</span></label>
+                                <input type="text" id="contact-name" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email <span class="required">*</span></label>
+                                <input type="email" id="contact-email" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-company">Company</label>
+                                <input type="text" id="contact-company" name="company" placeholder="Your company">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-budget">Monthly Ad Budget</label>
+                                <select id="contact-budget" name="budget">
+                                    <option value="">Select range</option>
+                                    <option value="<10k">Less than $10,000</option>
+                                    <option value="10k-50k">$10,000 - $50,000</option>
+                                    <option value="50k-100k">$50,000 - $100,000</option>
+                                    <option value="100k-500k">$100,000 - $500,000</option>
+                                    <option value=">500k">More than $500,000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Message <span class="required">*</span></label>
+                                <textarea id="contact-message" name="message" rows="4" required placeholder="Tell me about your goals and challenges..."></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <span>Send Message</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="form-note">This form is for demonstration purposes. In production, it would connect to your backend service.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">MB Portfolio</span>
+                    <p class="footer-tagline">Building profitable growth systems for e-commerce brands.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Home</a>
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; <span id="current-year"></span> Media Buyer Portfolio. All rights reserved.</p>
+                </div>
+            </div>
+            <a href="#hero" class="back-to-top" aria-label="Back to top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </a>
+        </div>
+    </footer>
+    
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modal-title">Project Details</h3>
+                <button class="modal-close" aria-label="Close modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+    
+    <!-- Skeleton Loader Template -->
+    <template id="skeleton-template">
+        <div class="skeleton-loader">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line"></div>
+        </div>
+    </template>
+    
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
